@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>Alona's Pastries — Floating Delights</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-1:#fff9f6; --bg-2:#fff1ea; --accent:#FF8A65; --accent-2:#FFD8A8; --accent-3:#FFB07C;
+  --muted:#7a4a2b; --card:#fff6f0; --glass:rgba(255,255,255,0.55); --glass-2:rgba(255,255,255,0.7);
+  --shadow: rgba(82,40,12,0.12); --radius:18px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Poppins',sans-serif;color:var(--muted);background:
+radial-gradient(900px 400px at 10% 8%, rgba(255,200,150,0.12), transparent),
+radial-gradient(600px 300px at 95% 92%, rgba(255,220,170,0.08), transparent),
+linear-gradient(135deg, var(--bg-1), var(--bg-2));line-height:1.45;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+
+/* Header & Nav */
+header{position:relative;text-align:center;padding:36px 20px 60px;margin:18px;border-radius:0 0 28px 28px;background:linear-gradient(180deg, rgba(255,255,255,0.32), rgba(255,255,255,0.06));backdrop-filter: blur(8px);box-shadow:0 12px 40px var(--shadow);}
+header h2{margin:12px 0 4px;font-size:2rem;color:#8a3e11}
+header p{margin:0;color:#6b3c11;opacity:0.95;font-weight:500}
+nav{position:sticky;top:12px;margin:18px auto 22px;max-width:1100px;display:flex;justify-content:center;gap:14px;background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.28));padding:10px 14px;border-radius:999px;box-shadow:0 8px 26px rgba(82,40,12,0.06);backdrop-filter: blur(6px);}
+nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:12px;transition:all .22s;opacity:0.95}
+nav a:hover{color:#fff;background:var(--accent);box-shadow:0 8px 18px rgba(255,138,101,0.15);transform:translateY(-4px)}
+nav a.active{background:var(--accent);color:#fff;box-shadow:0 10px 30px rgba(255,138,101,0.12);transform:none}
+
+/* Hero */
+.hero{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:10px 18px;}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));padding:28px;border-radius:24px;box-shadow:0 18px 50px var(--shadow);backdrop-filter: blur(10px);}
+.cta{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-3));color:#fff;padding:12px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 18px 50px rgba(255,138,101,0.12);cursor:pointer;opacity:0.95}
+.cta.secondary{background:transparent;border:1px solid rgba(122,74,43,0.08);color:var(--muted);font-weight:700;padding:10px 16px}
+.hero-image{display:flex;justify-content:center;position:relative}
+.hero-image .photo{width:100%;max-width:420px;border-radius:28px;box-shadow:0 28px 60px rgba(82,40,12,0.12)}
+.promo-badge{position:absolute;left:16px;bottom:18px;background:linear-gradient(90deg,#ffd27b,#ff8a65);padding:10px 14px;border-radius:12px;color:#7a3b12;font-weight:800;box-shadow:0 10px 30px rgba(255,138,101,0.12)}
+
+/* Card */
+.card{background:var(--card);border-radius:var(--radius);padding:22px;margin:18px auto;max-width:1100px;box-shadow:0 14px 40px rgba(82,40,12,0.06)}
+h2{font-size:1.4rem;margin-bottom:14px;color:#a35d13}
+
+/* Menu */
+.menu-items{display:flex; overflow-x:auto; gap:16px; padding-bottom:10px; scroll-snap-type:x mandatory;}
+.menu-item{flex:0 0 220px; scroll-snap-align:start; background:linear-gradient(180deg,#fff,#fffaf5); border-radius:16px; padding:12px; box-shadow:0 18px 40px rgba(82,40,12,0.06); transition:transform .36s; position:relative;}
+.menu-item img{width:100%;border-radius:12px;margin-bottom:8px}
+.menu-item h3{margin:6px 0 6px;font-size:1.05rem}
+.menu-item p{margin:0;color:#8b5a2f;font-weight:700}
+.price-tag{position:absolute;top:12px;right:12px;background:linear-gradient(90deg,#ffcf9c,#ffb07c);padding:8px 10px;border-radius:10px;color:#6b3c11;font-weight:800;box-shadow:0 8px 24px rgba(255,176,124,0.12)}
+.menu-actions{display:flex;gap:8px;margin-top:12px}
+.btn-buy{flex:1;background:linear-gradient(90deg,var(--accent),var(--accent-3));color:#fff;padding:10px;border-radius:12px;font-weight:800;cursor:pointer;border:none;opacity:0.95;transition:all 0.2s;}
+.btn-buy:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(255,138,101,0.25);}
+
+/* Gallery */
+.gallery-grid{display:flex;overflow-x:auto;gap:16px;padding-bottom:10px; scroll-snap-type:x mandatory;}
+.gallery-grid img{flex:0 0 250px; scroll-snap-align:start; height:160px; object-fit:cover; border-radius:12px; box-shadow:0 16px 40px rgba(82,40,12,0.10); transition:transform 0.3s;}
+.gallery-grid img:hover{transform:scale(1.05);}
+
+/* Contact + Footer */
+.contact p{font-size:1.05rem;margin:8px 0}
+footer{margin:30px 18px 40px;background:linear-gradient(90deg,var(--accent-2),#ffd6b6);padding:18px;border-radius:12px;text-align:center;color:#6b3c11}
+
+/* Floating Order */
+.floating-order{position:fixed;right:18px;bottom:18px;z-index:10;background:linear-gradient(90deg,var(--accent),var(--accent-3));color:#fff;padding:14px 18px;border-radius:999px;font-weight:800;text-decoration:none;box-shadow:0 18px 50px rgba(255,138,101,0.12);font-size:1rem;}
+
+/* Responsive */
+@media(max-width:980px){.hero{grid-template-columns:1fr;gap:18px;padding:8px}}
+@media(max-width:520px){.menu-item{flex:0 0 160px} .gallery-grid img{flex:0 0 170px; height:120px}}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>Floating Delights — Freshly Baked Every Morning</h2>
+  <p>Seasonal pastries, custom cakes, and daily warm bread. Order ahead or visit our cozy shop.</p>
+</header>
+
+<nav aria-label="Primary">
+  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+<section id="about" class="about card">
+<h2>About Alona's Pastries</h2>
+<p>From soft breads to decadent cakes, we bake everything fresh daily using local ingredients.</p>
+</section>
+
+<section id="menu" class="menu card">
+<h2>Our Menu</h2>
+<div class="menu-items">
+  <div class="menu-item" data-name="Chocolate Cupcake" data-price="60">
+    <div class="price-tag">₱60</div>
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Chocolate Cupcake">
+    <h3>Chocolate Cupcake</h3>
+    <p>Rich chocolate frosting</p>
+    <div class="menu-actions">
+      <button class="btn-buy">Add to cart</button>
+    </div>
+  </div>
+
+  <div class="menu-item" data-name="Butter Croissant" data-price="45">
+    <div class="price-tag">₱45</div>
+    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a" alt="Butter Croissant">
+    <h3>Butter Croissant</h3>
+    <p>Buttery and flaky</p>
+    <div class="menu-actions">
+      <button class="btn-buy">Add to cart</button>
+    </div>
+  </div>
+
+  <div class="menu-item" data-name="Caramel Cake" data-price="85">
+    <div class="price-tag">₱85</div>
+    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Caramel Cake">
+    <h3>Caramel Cake</h3>
+    <p>Soft layers with caramel drip</p>
+    <div class="menu-actions">
+      <button class="btn-buy">Add to cart</button>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="gallery" class="gallery card">
+<h2>Our Sweet Creations</h2>
+<div class="gallery-grid">
+  <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591" alt="Pastry 1">
+  <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0" alt="Pastry 2">
+  <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" alt="Pastry 3">
+</div>
+</section>
+
+<section id="contact" class="contact card">
+<h2>Contact & Order</h2>
+<p><strong>📍 Location:</strong> Purok 3, Barangay Parang, Cantilan, Surigao del Sur</p>
+<p><strong>📞 Phone:</strong> 09123456789</p>
+<p><strong>🕗 Hours:</strong> 6:00 AM – 8:00 PM</p>
+</section>
+
+</main>
+
+<a href="#contact" class="floating-order" id="orderNowBtn">Order Now</a>
+
+<footer>© 2025 Alona's Pastries | Made with ❤️ for sweet lovers</footer>
+
+<script>
+// Cart functionality
+let cart = [];
+const cartCount = document.createElement('span');
+cartCount.style.cssText = "position:fixed;top:20px;right:20px;background:var(--accent);color:#fff;padding:6px 10px;border-radius:999px;font-weight:700;z-index:20;";
+document.body.appendChild(cartCount);
+
+function updateCartCount(){
+  cartCount.innerText = cart.length;
+}
+
+document.querySelectorAll('.btn-buy').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    const item = this.closest('.menu-item');
+    const name = item.dataset.name;
+    const price = item.dataset.price;
+    cart.push({name, price});
+    updateCartCount();
+    alert(`${name} added to cart!`);
+  });
+});
+
+updateCartCount();
+</script>
+
+</body>
+</html>
